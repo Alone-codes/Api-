@@ -2,7 +2,7 @@ import sqlite3
 
 
 def create_user(username, password):
-    conn = sqlite3.connect('user')
+    conn = sqlite3.connect('user.db')
     cursor = conn.cursor()
     cursor.execute('''CREATE TABLE IF NOT EXISTS users (
                         id INTEGER PRIMARY KEY,
@@ -15,7 +15,7 @@ def create_user(username, password):
 
 
 def login(username, password):
-    conn = sqlite3.connect('users.db')
+    conn = sqlite3.connect('user.db')
     cursor = conn.cursor()
     cursor.execute("SELECT * FROM users WHERE username = ? AND password = ?", (username, password))
     user = cursor.fetchone()
@@ -33,7 +33,7 @@ def signup():
 
 def list_items():
     print("your old items : ")
-    
+    1
 
 def create_list():
     print("Creating a new list:")
